@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ConfirmationService} from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor(private confirmationService: ConfirmationService) {}
+
+  display: boolean = false;
+
+  showDialog() {
+    this.display = true;
+  }
 }
